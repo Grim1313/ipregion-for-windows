@@ -1717,14 +1717,10 @@ lookup_google() {
 
 lookup_gemini_supported() {
   local ip_version="$1"
-  local response country_code country_name available color_name
+  local country_code country_name available color_name
   local gemini_regions_url="https://ai.google.dev/gemini-api/docs/available-regions.md.txt"
 
-  response=$(curl_wrapper GET "https://www.google.com" \
-    --user-agent "$USER_AGENT" \
-    --ip-version "$ip_version")
-
-  country_code=$(grep_wrapper --perl '"MgUcDb":"\K[^"]*' <<<"$response")
+  country_code=$(lookup_google "$ip_version")
 
   if [[ -z "$country_code" ]]; then
     echo ""
