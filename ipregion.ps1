@@ -839,6 +839,33 @@ function Write-ColorText {
     }
 }
 
+function Get-ResultColor {
+    param(
+        [AllowNull()][AllowEmptyString()][string]$Value,
+        [string]$Service = ''
+    )
+
+    if ([string]::IsNullOrWhiteSpace($Value) -or $Value -eq $script:StatusNotAvailable) {
+        return [ConsoleColor]::DarkGray
+    }
+    if ($Value -in @('No', $script:StatusDenied, $script:StatusRateLimit, $script:StatusServerError)) {
+        return [ConsoleColor]::Red
+    }
+    if ($Service -eq 'Google Search Captcha' -and $Value -eq 'Yes') {
+        return [ConsoleColor]::Red
+    }
+    return [ConsoleColor]::Green
+}
+
+function Get-ServiceColor {
+    param([string]$Service, [array]$Values)
+
+    $colors = @($Values | ForEach-Object { Get-ResultColor -Value $_ -Service $Service })
+    if ($colors -contains [ConsoleColor]::Red) { return [ConsoleColor]::Red }
+    if ($colors -contains [ConsoleColor]::DarkGray) { return [ConsoleColor]::DarkGray }
+    return [ConsoleColor]::Green
+}
+
 function Write-ResultTable {
     param([string]$Title, [array]$Rows, [bool]$HasV4, [bool]$HasV6)
     Write-ColorText "`n$Title" Cyan
@@ -856,10 +883,22 @@ function Write-ResultTable {
     Write-ColorText ($header -join '  ') White
     Write-ColorText (($columns | ForEach-Object { '-' * $widths[$_] }) -join '  ') DarkGray
     foreach ($row in $Rows) {
-        $cells = @(([string]$row.service).PadRight($widths.Service))
-        if ($HasV4) { $cells += ([string]($row.ipv4 ?? $script:StatusNotAvailable)).PadRight($widths.IPv4) }
-        if ($HasV6) { $cells += ([string]($row.ipv6 ?? $script:StatusNotAvailable)).PadRight($widths.IPv6) }
-        Write-ColorText ($cells -join '  ') Green
+        $values = @()
+        if ($HasV4) { $values += [string]($row.ipv4 ?? $script:StatusNotAvailable) }
+        if ($HasV6) { $values += [string]($row.ipv6 ?? $script:StatusNotAvailable) }
+        $serviceColor = Get-ServiceColor -Service $row.service -Values $values
+        Write-ColorText ([string]$row.service).PadRight($widths.Service) $serviceColor -NoNewline
+        if ($HasV4) {
+            $v4 = [string]($row.ipv4 ?? $script:StatusNotAvailable)
+            Write-ColorText '  ' Gray -NoNewline
+            Write-ColorText $v4.PadRight($widths.IPv4) (Get-ResultColor $v4 $row.service) -NoNewline
+        }
+        if ($HasV6) {
+            $v6 = [string]($row.ipv6 ?? $script:StatusNotAvailable)
+            Write-ColorText '  ' Gray -NoNewline
+            Write-ColorText $v6.PadRight($widths.IPv6) (Get-ResultColor $v6 $row.service) -NoNewline
+        }
+        [Console]::Out.WriteLine()
     }
 }
 

@@ -61,6 +61,7 @@ Get-Help ./ipregion.ps1 -Full
 - External-IP validation using independent identity services
 - Bounded concurrent checks with stable result ordering
 - Interactive progress by phase and completed service count
+- Color-coded service names and results for successful, failed, and unavailable checks
 - 18 GeoIP providers, including 2ip.io from the Davoyan fork
 - 25 popular-service checks, including YouTube Music, Deezer, Amazon Prime, and Bing
 - Cloudflare, YouTube, and Netflix CDN checks

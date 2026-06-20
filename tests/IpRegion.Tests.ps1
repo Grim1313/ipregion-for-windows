@@ -87,6 +87,16 @@ Describe 'IPRegion result model' {
     It 'handles an empty statistics set' {
         { Write-StatisticsTable @() $true $false } | Should -Not -Throw
     }
+
+    It 'assigns result and service colors by failure severity' {
+        Get-ResultColor 'No' | Should -Be ([ConsoleColor]::Red)
+        Get-ResultColor 'Denied' | Should -Be ([ConsoleColor]::Red)
+        Get-ResultColor 'N/A' | Should -Be ([ConsoleColor]::DarkGray)
+        Get-ResultColor 'US' | Should -Be ([ConsoleColor]::Green)
+        Get-ResultColor 'Yes' 'Google Search Captcha' | Should -Be ([ConsoleColor]::Red)
+        Get-ServiceColor 'Example' @('US', 'Denied') | Should -Be ([ConsoleColor]::Red)
+        Get-ServiceColor 'Example' @('US', 'N/A') | Should -Be ([ConsoleColor]::DarkGray)
+    }
 }
 
 AfterAll {
