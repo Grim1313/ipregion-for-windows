@@ -1,0 +1,48 @@
+name: PowerShell tests
+
+on:
+  push:
+    paths:
+      - "ipregion.ps1"
+      - "tests/**"
+      - "PSScriptAnalyzerSettings.psd1"
+      - ".github/workflows/powershell-tests.yml"
+  pull_request:
+    paths:
+      - "ipregion.ps1"
+      - "tests/**"
+      - "PSScriptAnalyzerSettings.psd1"
+      - ".github/workflows/powershell-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: windows-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Install pinned development modules
+        shell: pwsh
+        run: |
+          Set-PSRepository PSGallery -InstallationPolicy Trusted
+          Install-Module Pester -RequiredVersion 5.7.1 -Scope CurrentUser -Force
+          Install-Module PSScriptAnalyzer -RequiredVersion 1.25.0 -Scope CurrentUser -Force
+
+      - name: Run Pester
+        shell: pwsh
+        run: |
+          $result = Invoke-Pester ./tests -PassThru -Output Detailed
+          if ($result.FailedCount -gt 0) { exit 1 }
+
+      - name: Run PSScriptAnalyzer
+        shell: pwsh
+        run: |
+          $issues = @(Invoke-ScriptAnalyzer . -Recurse -Settings ./PSScriptAnalyzerSettings.psd1)
+          $issues | Format-Table -AutoSize
+          if ($issues.Count -gt 0) { exit 1 }
