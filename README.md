@@ -1,4 +1,4 @@
-# IPRegion for Windows
+# IPRegion for Windows - your IP address location lookup
 
 A native PowerShell implementation of [vernette/ipregion](https://github.com/vernette/ipregion) for Windows. It compares the apparent country of the current public IP across GeoIP providers, popular services, and CDN endpoints.
 
