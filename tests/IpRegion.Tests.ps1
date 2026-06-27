@@ -88,6 +88,27 @@ Describe 'IPRegion result model' {
         { Write-StatisticsTable @() $true $false } | Should -Not -Throw
     }
 
+    It 'prints country consensus heading before the table rows' {
+        $writer = [System.IO.StringWriter]::new()
+        $previousOutput = [Console]::Out
+        try {
+            [Console]::SetOut($writer)
+            Write-StatisticsTable @(
+                [pscustomobject]@{
+                    code = 'US'
+                    country = 'United States'
+                    ipv4Percent = 100
+                    ipv6Percent = $null
+                }
+            ) $true $false
+            $output = $writer.ToString()
+        } finally {
+            [Console]::SetOut($previousOutput)
+            $writer.Dispose()
+        }
+        $output.IndexOf('Country consensus') | Should -BeLessThan $output.IndexOf('Code')
+    }
+
     It 'assigns result and service colors by failure severity' {
         Get-ResultColor 'No' | Should -Be ([ConsoleColor]::Red)
         Get-ResultColor 'Denied' | Should -Be ([ConsoleColor]::Red)

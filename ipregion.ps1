@@ -754,6 +754,7 @@ function Invoke-ServiceSet {
             $percent = [Math]::Floor(($completed / $selected.Count) * 100)
             Write-IpProgress -Activity $activity -Status "$completed of $($selected.Count) completed: $($service.Name)" -PercentComplete $percent
         }
+        Write-IpProgress -Activity $activity -Status "$($selected.Count) of $($selected.Count) completed" -PercentComplete 100 -Completed
         return $sequentialRows.ToArray()
     }
 
@@ -767,6 +768,7 @@ function Invoke-ServiceSet {
             Timeout = $using:Timeout
             ThrottleLimit = 1
             NoColor = $true
+            NoProgress = $true
         }
         if ($using:Proxy) { $workerParameters.Proxy = $using:Proxy }
         if ($using:Interface) { $workerParameters.Interface = $using:Interface }
@@ -784,6 +786,7 @@ function Invoke-ServiceSet {
         Write-IpProgress -Activity $activity -Status "$completed of $($selected.Count) completed: $($_.Row.service)" -PercentComplete $percent
         $_
     })
+    Write-IpProgress -Activity $activity -Status "$($selected.Count) of $($selected.Count) completed" -PercentComplete 100 -Completed
     return @($workerResults | Sort-Object Index | ForEach-Object Row)
 }
 
@@ -914,8 +917,19 @@ function Write-StatisticsTable {
         }
     })
     Write-ColorText "`nCountry consensus" Cyan
-    $properties = @('Code', 'Country') + $(if ($HasV4) { 'IPv4' }) + $(if ($HasV6) { 'IPv6' })
-    $rows | Format-Table -Property $properties -AutoSize | Out-String -Width 200 | Write-Output
+    $columns = @('Code', 'Country') + $(if ($HasV4) { 'IPv4' }) + $(if ($HasV6) { 'IPv6' })
+    $widths = @{}
+    foreach ($column in $columns) { $widths[$column] = $column.Length }
+    foreach ($row in $rows) {
+        foreach ($column in $columns) {
+            $widths[$column] = [Math]::Max($widths[$column], ([string]$row.$column).Length)
+        }
+    }
+    [Console]::Out.WriteLine(($columns | ForEach-Object { $_.PadRight($widths[$_]) }) -join '  ')
+    [Console]::Out.WriteLine(($columns | ForEach-Object { ('-' * $widths[$_]) }) -join '  ')
+    foreach ($row in $rows) {
+        [Console]::Out.WriteLine(($columns | ForEach-Object { ([string]$row.$_).PadRight($widths[$_]) }) -join '  ')
+    }
 }
 
 function Invoke-IpRegion {
@@ -973,6 +987,7 @@ function Invoke-IpRegion {
         return
     }
 
+    Write-IpProgress -Activity 'IPRegion' -Status 'Completed' -PercentComplete 100 -Completed
     Write-ColorText 'IPRegion for Windows' Cyan
     Write-ColorText $script:ScriptUrl DarkGray
     if ($externalV4) { Write-ColorText ("IPv4: {0}, registered in {1}" -f (ConvertTo-MaskedIpAddress $externalV4), ($script:Metadata[4].RegisteredCountry ?? 'N/A')) White }
