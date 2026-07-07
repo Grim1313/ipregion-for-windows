@@ -4,6 +4,9 @@ A native PowerShell implementation of [vernette/ipregion](https://github.com/ver
 
 The implementation also incorporates selected fixes and service checks from [Davoyan/ipregion](https://github.com/Davoyan/ipregion).
 
+<img width="345" height="484" alt="Screenshot_3-1" src="https://github.com/user-attachments/assets/c1a1d285-3078-4d13-87f1-d013cf35d4f6" /> <img width="345" height="484" alt="Screenshot_3-2" src="https://github.com/user-attachments/assets/34f39ab1-fdc4-47d9-bf8e-3a0ee611a927" />
+
+
 ## Requirements
 
 - Windows 10, Windows 11, or Windows Server
