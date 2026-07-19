@@ -967,7 +967,9 @@ function Invoke-IpRegion {
     if ($normalizedGroup -in @('All', 'Cdn')) { $cdn = @(Invoke-ServiceSet $script:CdnServices cdn $externalV4 $externalV6) }
 
     Write-IpProgress -Activity 'IPRegion' -Status 'Preparing report' -PercentComplete 98
-    $meta = if ($externalV4) { Get-NetworkInfo 4 } else { Get-NetworkInfo 6 }
+    $metadataV4 = if ($externalV4) { Get-NetworkInfo 4 } else { $null }
+    $metadataV6 = if ($externalV6) { Get-NetworkInfo 6 } else { $null }
+    $meta = if ($metadataV4) { $metadataV4 } else { $metadataV6 }
     $statistics = @(Get-CountryStatistic $primary $custom ([bool]$externalV4) ([bool]$externalV6))
     $result = [pscustomobject][ordered]@{
         version = 1
@@ -990,8 +992,14 @@ function Invoke-IpRegion {
     Write-IpProgress -Activity 'IPRegion' -Status 'Completed' -PercentComplete 100 -Completed
     Write-ColorText 'IPRegion for Windows' Cyan
     Write-ColorText $script:ScriptUrl DarkGray
-    if ($externalV4) { Write-ColorText ("IPv4: {0}, registered in {1}" -f (ConvertTo-MaskedIpAddress $externalV4), ($script:Metadata[4].RegisteredCountry ?? 'N/A')) White }
-    if ($externalV6) { Write-ColorText ("IPv6: {0}, registered in {1}" -f (ConvertTo-MaskedIpAddress $externalV6), ($script:Metadata[6].RegisteredCountry ?? 'N/A')) White }
+    if ($externalV4) {
+        $registeredV4 = if ([string]::IsNullOrWhiteSpace($metadataV4.RegisteredCountry)) { 'N/A' } else { $metadataV4.RegisteredCountry }
+        Write-ColorText ("IPv4: {0}, registered in {1}" -f (ConvertTo-MaskedIpAddress $externalV4), $registeredV4) White
+    }
+    if ($externalV6) {
+        $registeredV6 = if ([string]::IsNullOrWhiteSpace($metadataV6.RegisteredCountry)) { 'N/A' } else { $metadataV6.RegisteredCountry }
+        Write-ColorText ("IPv6: {0}, registered in {1}" -f (ConvertTo-MaskedIpAddress $externalV6), $registeredV6) White
+    }
     Write-ColorText ("ASN: {0} {1}" -f ($result.asn ?? 'N/A'), ($result.asnName ?? '')) Yellow
     if ($custom.Count) { Write-ResultTable 'Popular services' $custom ([bool]$externalV4) ([bool]$externalV6) }
     if ($cdn.Count) { Write-ResultTable 'CDN services' $cdn ([bool]$externalV4) ([bool]$externalV6) }

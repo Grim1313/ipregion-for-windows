@@ -65,6 +65,32 @@ Describe 'IPRegion service registry' {
 }
 
 Describe 'IPRegion result model' {
+    It 'loads metadata for both address families in a dual-stack report' {
+        $script:RequestedMetadataVersions = [System.Collections.Generic.List[int]]::new()
+        Mock Find-ExternalAddress {
+            param($IpVersion)
+            if ($IpVersion -eq 4) { '192.0.2.1' } else { '2001:db8::1' }
+        }
+        Mock Invoke-ServiceSet { @() }
+        Mock Get-NetworkInfo {
+            param($IpVersion)
+            $script:RequestedMetadataVersions.Add($IpVersion)
+            [pscustomobject]@{
+                Country = 'US'
+                RegisteredCountry = 'United States'
+                Asn = 64500
+                AsnName = 'Test Network'
+            }
+        }
+        Mock Write-IpProgress {}
+        Mock Write-ColorText {}
+        Mock Write-StatisticsTable {}
+
+        { Invoke-IpRegion } | Should -Not -Throw
+        $script:RequestedMetadataVersions | Should -Contain 4
+        $script:RequestedMetadataVersions | Should -Contain 6
+    }
+
     It 'calculates country consensus without counting availability values' {
         $primary = @(
             ConvertTo-ResultRow 'one' 'US' 'DE'
