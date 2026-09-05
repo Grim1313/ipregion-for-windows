@@ -7,7 +7,7 @@ The implementation also incorporates selected fixes and service checks from [Dav
 <img width="345" height="484" alt="Screenshot_3-1" src="https://github.com/user-attachments/assets/c1a1d285-3078-4d13-87f1-d013cf35d4f6" /> <img width="345" height="484" alt="Screenshot_3-2" src="https://github.com/user-attachments/assets/34f39ab1-fdc4-47d9-bf8e-3a0ee611a927" />
 
 
-## Requirements
+## ✅ Requirements
 
 - Windows 10, Windows 11, or Windows Server
 - PowerShell 7.4 or newer
@@ -15,7 +15,17 @@ The implementation also incorporates selected fixes and service checks from [Dav
 
 The runtime has no third-party dependencies. It does not require `curl`, `jq`, WSL, Git Bash, Docker, or external PowerShell modules.
 
-## Usage
+## ⭐ Usage method 1: Running the script directly from GitHub
+
+Launch PowerShell 7.4+ and run:
+
+```powershell
+& ([scriptblock]::Create((Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Grim1313/ipregion-for-windows/master/ipregion.ps1').Content)) -ThrottleLimit 1
+```
+
+## ⭐ Usage method 2: Running the downloaded file 'ipregion.ps1'
+
+Launch PowerShell 7.4+ and run:
 
 ```powershell
 # Run all checks
