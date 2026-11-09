@@ -2,15 +2,13 @@
 
 See which country GeoIP databases and platforms associate with your connection, and distinguish regional restrictions from network errors. Native PowerShell/.NET; no curl, jq, WSL, external runtime modules, accounts, or personal API keys.
 
-Based on [vernette/ipregion](https://github.com/vernette/ipregion), including its November 2026 redesign, with additional checks from [Davoyan/ipregion](https://github.com/Davoyan/ipregion).
+Based on [vernette/ipregion](https://github.com/vernette/ipregion), with additional checks from [Davoyan/ipregion](https://github.com/Davoyan/ipregion).
 
 ![Example dual-stack report](.github/assets/report-100.png)
 
-*Illustrative data, not a current availability guarantee.*
-
 ## ✅ Requirements
 
-Windows 10/11 or Windows Server with **PowerShell 7.4+**. Tested with 7.4.22 and 7.6.9. All runtime code remains in `ipregion.ps1`. Choose either method below.
+Windows 10/11 or Windows Server with **PowerShell 7.4+**.
 
 ## Usage
 
@@ -28,7 +26,7 @@ To select checks or change the output, append parameters to the same command, fo
 & ([scriptblock]::Create((Invoke-RestMethod 'https://raw.githubusercontent.com/Grim1313/ipregion-for-windows/master/ipregion.ps1'))) -ThrottleLimit 1 -Group GeoIP -IPv4 -Json
 ```
 
-Keep `-ThrottleLimit 1` for this method: parallel workers need a local script file. Use the second method for parallel execution. Direct execution uses the version currently published on GitHub.
+**Keep `-ThrottleLimit 1` for this method: parallel workers need a local script file. Use the second method for parallel execution. Direct execution uses the version currently published on GitHub.**
 
 ### ⭐ 2. Download and run locally
 
@@ -39,7 +37,8 @@ Invoke-WebRequest 'https://raw.githubusercontent.com/Grim1313/ipregion-for-windo
 pwsh ./ipregion.ps1
 ```
 
-The download command above saves the script with the correct filename. To download it through a browser instead:
+The download command above saves the script with the correct filename.
+To download it through a browser instead:
 
 1. Open the [raw script](https://raw.githubusercontent.com/Grim1313/ipregion-for-windows/master/ipregion.ps1), then press **Ctrl+S**. Save this plain-text content, not the GitHub page that displays the code.
 2. Save it as **`ipregion.ps1`**, not `ipregion.ps1.txt` or an `.html` file. If the save dialog offers a file-type selector, choose **All files**. Enable file name extensions in Windows Explorer to check the actual filename.
@@ -47,7 +46,7 @@ The download command above saves the script with the correct filename. To downlo
 
 Run the saved script from its folder in **PowerShell 7 (`pwsh`)**, using the command above.
 
-The local copy supports parallel checks and the following options:
+The local copy supports **parallel checks** and the following options:
 
 ```powershell
 # Complete report; intrusive checks are excluded
