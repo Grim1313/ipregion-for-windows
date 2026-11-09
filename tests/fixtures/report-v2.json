@@ -1,0 +1,1705 @@
+{
+  "version": 2,
+  "scriptVersion": "0.2.0",
+  "generatedAt": "2026-11-09T00:00:00Z",
+  "network": {
+    "mode": "direct",
+    "interface": "Ethernet"
+  },
+  "ipv4": {
+    "ip": "192.0.2.123",
+    "asn": 64500,
+    "org": "Example Network",
+    "registeredCountry": "Germany",
+    "registeredCode": "DE",
+    "asnSource": "RIPE",
+    "maxmindFailure": null
+  },
+  "ipv6": {
+    "ip": "2001:db8::1234",
+    "asn": 64501,
+    "org": "Example IPv6 Network",
+    "registeredCountry": "Germany",
+    "registeredCode": "DE",
+    "asnSource": "RIPE",
+    "maxmindFailure": null
+  },
+  "verdict": {
+    "ipv4": {
+      "country": "DE",
+      "tied": [],
+      "agreed": 35,
+      "answered": 35,
+      "checked": 61,
+      "errors": 1,
+      "blocked": 2
+    },
+    "ipv6": {
+      "country": "DE",
+      "tied": [],
+      "agreed": 34,
+      "answered": 35,
+      "checked": 61,
+      "errors": 1,
+      "blocked": 2
+    },
+    "proxy": {
+      "country": null,
+      "tied": [],
+      "agreed": 0,
+      "answered": 0,
+      "checked": 0,
+      "errors": 0,
+      "blocked": 0
+    }
+  },
+  "attention": [
+    {
+      "service": "ipapi.is",
+      "protocol": "ipv4",
+      "country": null,
+      "status": "error",
+      "reason": "rate limited (429)"
+    },
+    {
+      "service": "ipapi.is",
+      "protocol": "ipv6",
+      "country": null,
+      "status": "error",
+      "reason": "rate limited (429)"
+    },
+    {
+      "service": "Reddit",
+      "protocol": "ipv4",
+      "country": null,
+      "status": "ip_block",
+      "reason": "access denied (403)"
+    },
+    {
+      "service": "Reddit",
+      "protocol": "ipv6",
+      "country": null,
+      "status": "ip_block",
+      "reason": "access denied (403)"
+    },
+    {
+      "service": "Reddit (Guest Access)",
+      "protocol": "ipv4",
+      "country": null,
+      "status": "ip_block",
+      "reason": "access denied (403)"
+    },
+    {
+      "service": "Reddit (Guest Access)",
+      "protocol": "ipv6",
+      "country": null,
+      "status": "ip_block",
+      "reason": "access denied (403)"
+    },
+    {
+      "service": "JetBrains",
+      "protocol": "ipv6",
+      "country": "FR",
+      "status": "ok",
+      "reason": "different country"
+    }
+  ],
+  "results": {
+    "platforms": [
+      {
+        "id": "google",
+        "service": "Google",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "youtube",
+        "service": "YouTube",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "twitch",
+        "service": "Twitch",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "chatgpt",
+        "service": "ChatGPT",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "netflix",
+        "service": "Netflix",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "spotify",
+        "service": "Spotify",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "deezer",
+        "service": "Deezer",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "reddit",
+        "service": "Reddit",
+        "kind": "country",
+        "ipv4": {
+          "country": null,
+          "access": "ipblock",
+          "status": "ip_block",
+          "reason": "access denied (403)",
+          "httpStatus": 403,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "ipblock",
+          "status": "ip_block",
+          "reason": "access denied (403)",
+          "httpStatus": 403,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "disney_plus",
+        "service": "Disney+",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "amazon_prime",
+        "service": "Amazon Prime",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "apple",
+        "service": "Apple",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "steam",
+        "service": "Steam",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "tiktok",
+        "service": "TikTok",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "ookla_speedtest",
+        "service": "Ookla Speedtest",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "jetbrains",
+        "service": "JetBrains",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "FR",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "playstation",
+        "service": "PlayStation",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "microsoft",
+        "service": "Microsoft",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "bing",
+        "service": "Bing",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "claude",
+        "service": "Claude",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      }
+    ],
+    "availability": [
+      {
+        "id": "youtube_music",
+        "service": "YouTube Music",
+        "kind": "availability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "reddit_guest_access",
+        "service": "Reddit (Guest Access)",
+        "kind": "availability",
+        "ipv4": {
+          "country": null,
+          "access": "ipblock",
+          "status": "ip_block",
+          "reason": "access denied (403)",
+          "httpStatus": 403,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "ipblock",
+          "status": "ip_block",
+          "reason": "access denied (403)",
+          "httpStatus": 403,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "youtube_premium",
+        "service": "YouTube Premium",
+        "kind": "availability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "spotify_signup",
+        "service": "Spotify Signup",
+        "kind": "availability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "disney_plus_access",
+        "service": "Disney+ Access",
+        "kind": "availability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      }
+    ],
+    "ai": [
+      {
+        "id": "gemini_supported",
+        "service": "Gemini Supported",
+        "kind": "availability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "gemini_web",
+        "service": "Gemini Web",
+        "kind": "availability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "anthropic_api",
+        "service": "Anthropic API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "deepseek_api",
+        "service": "DeepSeek API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "doubao_api",
+        "service": "Doubao API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "glm_api",
+        "service": "GLM API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "glm_cn_api",
+        "service": "GLM CN API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "grok_api",
+        "service": "Grok API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "kimi_api",
+        "service": "Kimi API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "kimi_cn_api",
+        "service": "Kimi CN API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "minimax_api",
+        "service": "MiniMax API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "minimax_cn_api",
+        "service": "MiniMax CN API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "openai_api",
+        "service": "OpenAI API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "qwen_api",
+        "service": "Qwen API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "qwen_cn_api",
+        "service": "Qwen CN API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "siliconflow_api",
+        "service": "SiliconFlow API",
+        "kind": "reachability",
+        "ipv4": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": "yes",
+          "status": "reachable",
+          "reason": "authentication required; account access not tested",
+          "httpStatus": 401,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      }
+    ],
+    "cdn": [
+      {
+        "id": "cloudflare_cdn",
+        "service": "Cloudflare CDN",
+        "kind": "edge",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": "FRA",
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": "FRA",
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "youtube_cdn",
+        "service": "YouTube CDN",
+        "kind": "edge",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": "FRA",
+          "node": "fra16s45"
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": "FRA",
+          "node": "fra16s45"
+        },
+        "proxy": null
+      },
+      {
+        "id": "netflix_cdn",
+        "service": "Netflix CDN",
+        "kind": "edge",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": "FRA",
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": "FRA",
+          "node": null
+        },
+        "proxy": null
+      }
+    ],
+    "geoip": [
+      {
+        "id": "maxmind",
+        "service": "maxmind.com",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "ripe",
+        "service": "rdap.db.ripe.net",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "ipinfo_io",
+        "service": "ipinfo.io",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "cloudflare",
+        "service": "cloudflare.com",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "ipregistry",
+        "service": "ipregistry.co",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "ipapi_co",
+        "service": "ipapi.co",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "ifconfig_co",
+        "service": "ifconfig.co",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "ip2location_io",
+        "service": "ip2location.io",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "iplocation_com",
+        "service": "iplocation.com",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "country_is",
+        "service": "country.is",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "geoapify_com",
+        "service": "geoapify.com",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "geojs_io",
+        "service": "geojs.io",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "ipapi_is",
+        "service": "ipapi.is",
+        "kind": "country",
+        "ipv4": {
+          "country": null,
+          "access": null,
+          "status": "error",
+          "reason": "rate limited (429)",
+          "httpStatus": 429,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": null,
+          "access": null,
+          "status": "error",
+          "reason": "rate limited (429)",
+          "httpStatus": 429,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "ipbase_com",
+        "service": "ipbase.com",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "ipquery_io",
+        "service": "ipquery.io",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "ipwho_is",
+        "service": "ipwho.is",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "ipapi_com",
+        "service": "ip-api.com",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      },
+      {
+        "id": "2ip",
+        "service": "2ip.io",
+        "kind": "country",
+        "ipv4": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "ipv6": {
+          "country": "DE",
+          "access": null,
+          "status": "ok",
+          "reason": null,
+          "httpStatus": 200,
+          "elapsedMs": 120,
+          "iata": null,
+          "node": null
+        },
+        "proxy": null
+      }
+    ]
+  }
+}

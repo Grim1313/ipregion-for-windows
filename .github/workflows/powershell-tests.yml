@@ -5,12 +5,16 @@ on:
     paths:
       - "ipregion.ps1"
       - "tests/**"
+      - "schema/**"
+      - "tools/**"
       - "PSScriptAnalyzerSettings.psd1"
       - ".github/workflows/powershell-tests.yml"
   pull_request:
     paths:
       - "ipregion.ps1"
       - "tests/**"
+      - "schema/**"
+      - "tools/**"
       - "PSScriptAnalyzerSettings.psd1"
       - ".github/workflows/powershell-tests.yml"
   workflow_dispatch:
@@ -22,6 +26,10 @@ jobs:
   test:
     runs-on: windows-latest
     timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        powershell: ['7.4.22', '7.6.9']
 
     steps:
       - name: Check out repository
@@ -34,11 +42,25 @@ jobs:
           Install-Module Pester -RequiredVersion 5.7.1 -Scope CurrentUser -Force
           Install-Module PSScriptAnalyzer -RequiredVersion 1.25.0 -Scope CurrentUser -Force
 
+      - name: Install the selected portable PowerShell
+        shell: pwsh
+        run: |
+          $version = '${{ matrix.powershell }}'
+          $archive = Join-Path $env:RUNNER_TEMP 'powershell.zip'
+          $destination = Join-Path $env:RUNNER_TEMP 'ipregion-pwsh'
+          Invoke-WebRequest "https://github.com/PowerShell/PowerShell/releases/download/v$version/PowerShell-$version-win-x64.zip" -OutFile $archive
+          Expand-Archive -LiteralPath $archive -DestinationPath $destination
+          "IPREGION_PWSH=$destination/pwsh.exe" >> $env:GITHUB_ENV
+
       - name: Run Pester
         shell: pwsh
         run: |
-          $result = Invoke-Pester ./tests -PassThru -Output Detailed
-          if ($result.FailedCount -gt 0) { exit 1 }
+          & $env:IPREGION_PWSH -NoProfile -Command {
+            Import-Module Pester -RequiredVersion 5.7.1
+            $result = Invoke-Pester ./tests -PassThru -Output Detailed
+            if ($result.FailedCount -gt 0 -or $result.FailedContainersCount -gt 0 -or $result.TotalCount -eq 0) { exit 1 }
+          }
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 
       - name: Run PSScriptAnalyzer
         shell: pwsh

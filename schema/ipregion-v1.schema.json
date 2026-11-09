@@ -1,0 +1,192 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IPRegion for Windows JSON v1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "scriptVersion": {
+      "type": "string"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ipv4": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "ipv6": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "registeredCountry": {
+      "type": "string"
+    },
+    "asn": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "asnName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "results": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "primary": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "service": {
+                "type": "string"
+              },
+              "ipv4": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ipv6": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "service",
+              "ipv4",
+              "ipv6"
+            ]
+          }
+        },
+        "custom": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "service": {
+                "type": "string"
+              },
+              "ipv4": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ipv6": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "service",
+              "ipv4",
+              "ipv6"
+            ]
+          }
+        },
+        "cdn": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "service": {
+                "type": "string"
+              },
+              "ipv4": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ipv6": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "service",
+              "ipv4",
+              "ipv6"
+            ]
+          }
+        }
+      },
+      "required": [
+        "primary",
+        "custom",
+        "cdn"
+      ]
+    },
+    "statistics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "ipv4Percent": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
+          },
+          "ipv6Percent": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "code",
+          "country",
+          "ipv4Percent",
+          "ipv6Percent"
+        ]
+      }
+    }
+  },
+  "required": [
+    "version",
+    "scriptVersion",
+    "generatedAt",
+    "ipv4",
+    "ipv6",
+    "registeredCountry",
+    "asn",
+    "asnName",
+    "results",
+    "statistics"
+  ]
+}

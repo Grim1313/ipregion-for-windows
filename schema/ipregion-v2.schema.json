@@ -1,0 +1,595 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IPRegion for Windows JSON v2",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "const": 2
+    },
+    "scriptVersion": {
+      "type": "string"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "enum": [
+            "direct",
+            "proxy",
+            "system-proxy"
+          ]
+        },
+        "interface": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "mode",
+        "interface"
+      ]
+    },
+    "ipv4": {
+      "$ref": "#/definitions/network"
+    },
+    "ipv6": {
+      "$ref": "#/definitions/network"
+    },
+    "verdict": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ipv4": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "country": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "tied": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "agreed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "answered": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "checked": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "errors": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "blocked": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "country",
+            "tied",
+            "agreed",
+            "answered",
+            "checked",
+            "errors",
+            "blocked"
+          ]
+        },
+        "ipv6": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "country": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "tied": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "agreed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "answered": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "checked": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "errors": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "blocked": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "country",
+            "tied",
+            "agreed",
+            "answered",
+            "checked",
+            "errors",
+            "blocked"
+          ]
+        },
+        "proxy": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "country": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "tied": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "agreed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "answered": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "checked": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "errors": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "blocked": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "country",
+            "tied",
+            "agreed",
+            "answered",
+            "checked",
+            "errors",
+            "blocked"
+          ]
+        }
+      },
+      "required": [
+        "ipv4",
+        "ipv6",
+        "proxy"
+      ]
+    },
+    "attention": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "service": {
+            "type": "string"
+          },
+          "protocol": {
+            "enum": [
+              "ipv4",
+              "ipv6",
+              "proxy"
+            ]
+          },
+          "country": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "service",
+          "protocol",
+          "country",
+          "status",
+          "reason"
+        ]
+      }
+    },
+    "results": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "platforms": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "service": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "country",
+                  "availability",
+                  "reachability",
+                  "observation",
+                  "edge"
+                ]
+              },
+              "ipv4": {
+                "$ref": "#/definitions/cell"
+              },
+              "ipv6": {
+                "$ref": "#/definitions/cell"
+              },
+              "proxy": {
+                "$ref": "#/definitions/cell"
+              }
+            },
+            "required": [
+              "id",
+              "service",
+              "kind",
+              "ipv4",
+              "ipv6",
+              "proxy"
+            ]
+          }
+        },
+        "availability": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "service": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "country",
+                  "availability",
+                  "reachability",
+                  "observation",
+                  "edge"
+                ]
+              },
+              "ipv4": {
+                "$ref": "#/definitions/cell"
+              },
+              "ipv6": {
+                "$ref": "#/definitions/cell"
+              },
+              "proxy": {
+                "$ref": "#/definitions/cell"
+              }
+            },
+            "required": [
+              "id",
+              "service",
+              "kind",
+              "ipv4",
+              "ipv6",
+              "proxy"
+            ]
+          }
+        },
+        "ai": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "service": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "country",
+                  "availability",
+                  "reachability",
+                  "observation",
+                  "edge"
+                ]
+              },
+              "ipv4": {
+                "$ref": "#/definitions/cell"
+              },
+              "ipv6": {
+                "$ref": "#/definitions/cell"
+              },
+              "proxy": {
+                "$ref": "#/definitions/cell"
+              }
+            },
+            "required": [
+              "id",
+              "service",
+              "kind",
+              "ipv4",
+              "ipv6",
+              "proxy"
+            ]
+          }
+        },
+        "cdn": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "service": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "country",
+                  "availability",
+                  "reachability",
+                  "observation",
+                  "edge"
+                ]
+              },
+              "ipv4": {
+                "$ref": "#/definitions/cell"
+              },
+              "ipv6": {
+                "$ref": "#/definitions/cell"
+              },
+              "proxy": {
+                "$ref": "#/definitions/cell"
+              }
+            },
+            "required": [
+              "id",
+              "service",
+              "kind",
+              "ipv4",
+              "ipv6",
+              "proxy"
+            ]
+          }
+        },
+        "geoip": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "service": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "country",
+                  "availability",
+                  "reachability",
+                  "observation",
+                  "edge"
+                ]
+              },
+              "ipv4": {
+                "$ref": "#/definitions/cell"
+              },
+              "ipv6": {
+                "$ref": "#/definitions/cell"
+              },
+              "proxy": {
+                "$ref": "#/definitions/cell"
+              }
+            },
+            "required": [
+              "id",
+              "service",
+              "kind",
+              "ipv4",
+              "ipv6",
+              "proxy"
+            ]
+          }
+        }
+      },
+      "required": [
+        "platforms",
+        "availability",
+        "ai",
+        "cdn",
+        "geoip"
+      ]
+    }
+  },
+  "required": [
+    "version",
+    "scriptVersion",
+    "generatedAt",
+    "network",
+    "ipv4",
+    "ipv6",
+    "verdict",
+    "attention",
+    "results"
+  ],
+  "definitions": {
+    "cell": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "country": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "access": {
+          "enum": [
+            null,
+            "yes",
+            "no",
+            "ipblock"
+          ]
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "reachable",
+            "observation",
+            "region_block",
+            "ip_block",
+            "denied",
+            "error",
+            "unknown",
+            "skipped"
+          ]
+        },
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "httpStatus": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 599
+        },
+        "elapsedMs": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "iata": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "node": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "country",
+        "access",
+        "status",
+        "reason",
+        "httpStatus",
+        "elapsedMs",
+        "iata",
+        "node"
+      ]
+    },
+    "network": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ip": {
+          "type": "string"
+        },
+        "asn": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "org": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "registeredCountry": {
+          "type": "string"
+        },
+        "registeredCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "asnSource": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "maxmindFailure": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "ip",
+        "asn",
+        "org",
+        "registeredCountry",
+        "registeredCode",
+        "asnSource",
+        "maxmindFailure"
+      ]
+    }
+  }
+}

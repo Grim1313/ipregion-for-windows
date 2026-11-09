@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "scriptVersion": "0.2.0",
+  "generatedAt": "2026-11-09T00:00:00Z",
+  "ipv4": "192.0.2.123",
+  "ipv6": "2001:db8::1234",
+  "registeredCountry": "Germany",
+  "asn": "AS64500",
+  "asnName": "Example Network",
+  "results": {
+    "primary": [
+      {
+        "service": "maxmind.com",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "rdap.db.ripe.net",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "ipinfo.io",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "cloudflare.com",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "ipregistry.co",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "ipapi.co",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "ifconfig.co",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "ip2location.io",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "iplocation.com",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "country.is",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "geoapify.com",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "geojs.io",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "ipapi.is",
+        "ipv4": "N/A",
+        "ipv6": "N/A"
+      },
+      {
+        "service": "ipbase.com",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "ipquery.io",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "ipwho.is",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "ip-api.com",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "2ip.io",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      }
+    ],
+    "custom": [
+      {
+        "service": "Google",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "YouTube",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "YouTube Music",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "Twitch",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "ChatGPT",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Netflix",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Spotify",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Deezer",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Reddit",
+        "ipv4": "Denied",
+        "ipv6": "Denied"
+      },
+      {
+        "service": "Disney+",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Gemini Supported",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "Reddit (Guest Access)",
+        "ipv4": "Denied",
+        "ipv6": "Denied"
+      },
+      {
+        "service": "YouTube Premium",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "Spotify Signup",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "Disney+ Access",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "Amazon Prime",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Apple",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Steam",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "TikTok",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Ookla Speedtest",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "JetBrains",
+        "ipv4": "DE",
+        "ipv6": "FR"
+      },
+      {
+        "service": "PlayStation",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Microsoft",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Bing",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Claude",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Gemini Web",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "Anthropic API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "DeepSeek API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "Doubao API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "GLM API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "GLM CN API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "Grok API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "Kimi API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "Kimi CN API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "MiniMax API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "MiniMax CN API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "OpenAI API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "Qwen API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "Qwen CN API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      },
+      {
+        "service": "SiliconFlow API",
+        "ipv4": "Yes",
+        "ipv6": "Yes"
+      }
+    ],
+    "cdn": [
+      {
+        "service": "Cloudflare CDN",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "YouTube CDN",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      },
+      {
+        "service": "Netflix CDN",
+        "ipv4": "DE",
+        "ipv6": "DE"
+      }
+    ]
+  },
+  "statistics": [
+    {
+      "code": "DE",
+      "country": "Germany",
+      "ipv4Percent": 100.0,
+      "ipv6Percent": 97.0
+    },
+    {
+      "code": "FR",
+      "country": "France",
+      "ipv4Percent": 0.0,
+      "ipv6Percent": 3.0
+    }
+  ]
+}
